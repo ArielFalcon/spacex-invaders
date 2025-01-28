@@ -1,27 +1,53 @@
-👾 # Space Invaders Replica - Vue 3 + TypeScript
+## 👾 Space Invaders Replica
 
-**Pruébalo!**  --> https://spacex-invaders.netlify.app
+<p align = "center">
+    <img src="public/demo.webp" alt="logo" width="1289"/>
+</p>
 
-Este proyecto es una **replica sencilla** del clásico videojuego **Space Invaders** desarrollado utilizando **Vue 3**, **TypeScript**, y **Vite**. 
-El propósito de este proyecto es mostrar los conocimientos adquiridos sobre el desarrollo web, Vue 3, TypeScript y la creación de aplicaciones web de una forma entretenida.
+  --> [**Try it out!**](https://spacex-invaders.vercel.app/)
+
+## 〔ℹ〕 About
+This project is a **simple replica** of the classic video game Space Invaders developed using **Vue 3, TypeScript, and Vite**.
+The purpose of this project is to showcase the knowledge acquired in web development.
+
 
 ## Características
 
-- **Desarrollo con Vue 3 y TypeScript**: Se utiliza Vue 3 con la sintaxis `<script setup>` y TypeScript para una experiencia de desarrollo moderna, segura y eficiente.
-- **Vite como Bundler**: Vite es utilizado como el bundler de este proyecto, lo que proporciona una experiencia de desarrollo rápida y optimizada.
-- **Juego Clásico**: Basado en el clásico *Space Invaders*, el jugador debe destruir a los invasores espaciales antes de que lleguen a la parte inferior de la pantalla.
-- **Interactividad**: El jugador puede mover su nave y disparar para destruir los invasores. Incluye mecanismos de mejora de disparos, diferentes enemigos, detección de colisiones...
+- **Developed with Vue 3 and TypeScript**: Vue 3 with `<script setup>` syntax and TypeScript are used for a modern, safe, and efficient development experience.
+- **Vite as Bundler**: Vite is used as the bundler for this project, providing a fast and optimized development experience.
+- **Classic Game**: Based on the classic *Space Invaders*, the player must destroy the space invaders before they reach the bottom of the screen.
+- **Interactivity**: The player can move their spaceship and shoot to destroy the invaders. Includes shooting power-ups, different enemies, collision detection…
 
 ## Requisitos
 
-- **Node.js** (se recomienda versión 16 o superior)
-- **npm** | **yarn** | **pnpm** (dependiendo de tu gestor de paquetes preferido)
+- **Node.js** (_version 16 or higher recommended_)
+- **npm** | **yarn** | **pnpm** (_depending on your preferred package manager_)
+- **Vite** (_global installation recommended for a better development experience_)
+
+```bash
+npm install -g vite
+```
+
 
 ## Instalación
 
-1. **Clonar el repositorio**:
+1. **Clone the repo**:
 
    ```bash
    git clone https://github.com/arielfalcon/spacex-invaders.git
    cd spacex-invaders-replica
    ```
+2. **Install the dependencies**:
+
+   ```bash
+   npm install
+   ```
+3. **Launch the development server**:
+
+   ```bash
+    npm run dev
+    ```
+   > **Note**: The game is not yet optimized for mobile devices. For the best experience, use a desktop browser.
+4. **Open [http://localhost:3000](http://localhost:3000) in your browser to view the result 🚀**
+   > **Note**: Port may vary depending on your configuration.
+
