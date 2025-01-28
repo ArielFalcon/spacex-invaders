@@ -1,5 +1,7 @@
 👾 # Space Invaders Replica - Vue 3 + TypeScript
 
+**Pruébalo!**  --> https://spacex-invaders.netlify.app
+
 Este proyecto es una **replica sencilla** del clásico videojuego **Space Invaders** desarrollado utilizando **Vue 3**, **TypeScript**, y **Vite**. 
 El propósito de este proyecto es mostrar los conocimientos adquiridos sobre el desarrollo web, Vue 3, TypeScript y la creación de aplicaciones web de una forma entretenida.
 
