@@ -76,11 +76,11 @@ function initAliens() {
 
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      const type = row === 0 ? 'boss' : 
+      const type = row === 0 ? 'boss' :
                   row < 2 ? 'medium' : 'basic';
-      const maxHealth = type === 'boss' ? 4 : 
-                       type === 'medium' ? 2 : 1;
-      
+      const maxHealth = type === 'boss' ? 4 :
+        type === 'medium' ? 2 : 1;
+
       aliens_array.push({
         x: col * 80 + 200,
         y: row * 60 + 50,
@@ -158,7 +158,7 @@ function activatePowerUp(type: string) {
   if (powerUpTimer.value) {
     clearTimeout(powerUpTimer.value);
   }
-  
+
   activePowerUp.value = type;
   powerUpTimer.value = window.setTimeout(() => {
     activePowerUp.value = null;
@@ -169,7 +169,7 @@ function activatePowerUp(type: string) {
 function moveAliens() {
   let needsToChangeDirection = false;
   const livingAliens = aliens.value.filter(alien => alien.alive);
-  
+
   livingAliens.forEach(alien => {
     const nextX = alien.x + ALIEN_SPEED * alienDirection.value;
     if (nextX <= 0 || nextX + alien.width >= GAME_WIDTH) {
@@ -196,15 +196,15 @@ function moveAliens() {
 function movePowerUps() {
   powerUps.value = powerUps.value.filter(powerUp => {
     if (!powerUp.active) return false;
-    
+
     powerUp.y += powerUp.velocity;
-    
+
     // Comprobar colisión con el jugador
     if (checkCollision(player.value, powerUp)) {
       activatePowerUp(powerUp.type);
       return false;
     }
-    
+
     // Eliminar si sale de la pantalla
     return powerUp.y < GAME_HEIGHT;
   });
@@ -220,7 +220,7 @@ function handleBulletMovement() {
   }
 
   bullet.value.y -= BULLET_SPEED;
-  
+
   if (bullet.value.y < 0 && (!bullet.value.bounce || (bullet.value.bounceCount || 0) >= 2)) {
     bullet.value = null;
   }
@@ -254,7 +254,7 @@ function gameLoop() {
   }
 
   const livingAliens = aliens.value.filter(alien => alien.alive);
-  
+
   if (livingAliens.length === 0) {
     gameOver.value = true;
     return;
@@ -290,7 +290,7 @@ onUnmounted(() => {
   <div class="game-container">
     <div class="game-screen" :style="{ width: GAME_WIDTH + 'px', height: GAME_HEIGHT + 'px' }">
       <!-- Player -->
-      <div class="player" :style="{ 
+      <div class="player" :style="{
         left: player.x + 'px',
         top: player.y + 'px',
         width: player.width + 'px',
@@ -298,8 +298,8 @@ onUnmounted(() => {
       }"></div>
 
       <!-- Bullet -->
-      <div v-if="bullet" 
-           class="bullet" 
+      <div v-if="bullet"
+           class="bullet"
            :class="{
              'bullet-pierce': bullet.pierce,
              'bullet-bounce': bullet.bounce,
@@ -314,7 +314,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Aliens -->
-      <div v-for="(alien, index) in aliens" 
+      <div v-for="(alien, index) in aliens"
            :key="index"
            v-show="alien.alive"
            class="alien"
@@ -456,18 +456,6 @@ onUnmounted(() => {
   position: absolute;
   border-radius: 50%;
   animation: pulse 1s infinite;
-}
-
-.power-up-double {
-  background-color: #f0f;
-}
-
-.power-up-pierce {
-  background-color: #ff0;
-}
-
-.power-up-bounce {
-  background-color: #0ff;
 }
 
 @keyframes pulse {
